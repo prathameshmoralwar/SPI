@@ -20,12 +20,12 @@ architecture arch of ADC_controller is
   signal count                : integer range 0 to 36 := 0;
   signal reg_data             : std_logic_vector(11 downto 0);
   signal serial_clock_enable  : std_logic;
-  signal conf_bits            : std_logic_vector(3 downto 0) := "1101"; -- Start, SGL/DIFF, ODD/SIGN, MSBF
+  signal conf_bits            : std_logic_vector(3 downto 0) := "1101"; -- Status
   signal started              : std_logic;
 
   begin
     
-    process(clk)                      -- Create the serial clock that runs the SPI timing
+    process(clk)                      -- SPI Clock
       begin
         if rising_edge(clk) then
           if reset = '1' then
@@ -110,11 +110,11 @@ architecture arch of ADC_controller is
                         count <= count + 1;                     
                         
               when 9 => CSn <= '0';
-                        SCL <= '0';             -- Null bit
+                        SCL <= '0';             -- Null bit needed as per ADC datasheets
                         count <= count + 1;
               when 10 => CSn <= '0';
                         SCL <= '1';
-                        count <= count + 1;     -- Null bit
+                        count <= count + 1;     -- Null bit as per ADC datasheets
               when 11 => CSn <= '0';
                         SCL <= '0';
                         reg_data(11) <= D_out;
