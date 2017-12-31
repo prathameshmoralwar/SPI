@@ -1,3 +1,24 @@
+--------------------------------------------------------------------------------------
+------ Company: Chalmers University Of Technology  
+------ Engineer: Prathamesh Prabhakar Moralwar
+------ 
+------ Create Date: 10/04/2017 07:26:17 PM
+------ Design Name: 
+------ Module Name: ADC controller
+------ Project Name: A sampled system
+------ Target Devices: Nexys4 DDR (xc7a100tcsg324-1)
+------ Tool Versions: Vivado 2017.2
+------ Description: ADC Controller.
+------ 
+------ Dependencies: None
+------ 
+------ Revision:
+------ Revision 0.01 - File Created
+------ Additional Comments:
+------ 
+--------------------------------------------------------------------------------------
+
+
 library ieee;
 use ieee.std_logic_1164.all;
 
