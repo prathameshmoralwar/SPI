@@ -64,7 +64,7 @@ architecture arch of top_level is
                                     start => start,
                                     reset => reset,
                                     D_out => D_out, 
-                                  --  finished => finished  -- Same as in the DAC
+                                  --  finished => finished  -- 
                                     CSn => CS_ADC,
                                     SCL => SCK_ADC,
                                     D_in => D_in,
@@ -75,7 +75,7 @@ architecture arch of top_level is
                                     start => start, 
                                     data => ADC2DAC_data, 
                                     reset => reset,
-                                   -- finished => '0';    -- How do I connect this signal that just of importance to the controller?
+                                   -- finished => '0';  
                                     CS => CS_DAC,
                                     SDI => SDI,    
                                     SCK => SCK_DAC,     
